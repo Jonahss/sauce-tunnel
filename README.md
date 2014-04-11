@@ -1,3 +1,10 @@
+sauce-tunnel using sauce-connect 3.1
+====================================
+
+grunt-saucelabs doesn't work with the newest version of [sauce-tunnel](https://github.com/jmreidy/sauce-tunnel) due to [issue #18](https://github.com/jmreidy/sauce-tunnel/issues/18)
+
+This branch forks right before Sauce Connect v4 was integrated and upgrades to v3.1 which contains a fix to openssl, in response to the [Heartbleed Vulnerability](http://heartbleed.com).
+
 sauce-tunnel
 ============
 
@@ -20,7 +27,7 @@ Before starting the tunnel, initialize it first
 var tunnel = new SauceTunnel(SAUCE_USERNAME, SAUCE_ACCESSKEY, tunnelIdentifier, tunneled, extraFlags);
 ```
 
-1. `SAUCE_USERNAME` and `SAUCE_ACCESSKEY` are the username and the accesskey for saucelabs. They are usually set as environment variables (specially in continuous integration tools like [travis](http://travis-ci.org) ) 
+1. `SAUCE_USERNAME` and `SAUCE_ACCESSKEY` are the username and the accesskey for saucelabs. They are usually set as environment variables (specially in continuous integration tools like [travis](http://travis-ci.org) )
 2. The `tunnelIdentifier` is a unique identifier for the tunnel. It is optional and is automatically generated when not specified. Note that the tunnel identifier may have to be passed in with the browsers object as a desired capability to enable traffic to use the tunnel. More details [here](https://saucelabs.com/docs/additional-config#tunnel-identifier)
 3. The `tunneled` attribute is a boolean value to indicate if the tunnel is to be created or not. This value can be set to `false` to mock a tunnel creation if the site tested is publically accessible. To create a tunnel, set this value to `true`.
 4. The ``extraFlags`` attribute is an array of options flags (see [here](https://saucelabs.com/docs/connect)). Example: ``['--debug', '--direct-domains', 'www.google.com']``. It is optional.
@@ -29,7 +36,7 @@ Once the tunnel is initialized, start it with the following command.
 
 ```
 tunnel.start(function(status){
-  // status === true indicates that the tunnel was successfully created. 
+  // status === true indicates that the tunnel was successfully created.
 });
 ```
 
@@ -58,11 +65,3 @@ tunnel.start(function(status){
   });
 });
 ```
-
-## CHANGELOG
-
-### v1.1
-- Remove all the logic surrounding tracking open tunnels, killing existing
-tunnels, and tunnel timeouts. (#3)
-
-

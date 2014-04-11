@@ -1,21 +1,22 @@
 {
-  "name": "sauce-tunnel",
-  "version": "1.1.2",
-  "description": "A wrapper around the Sauce Labs tunnel jar",
+  "name": "sauce-tunnel-sc3-1",
+  "version": "1.0.0",
+  "description": "A wrapper around the Sauce Labs tunnel jar, using the older Sauce Connect 3.1",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/jmreidy/sauce-tunnel"
+    "url": "https://github.com/jonahss/sauce-tunnel/tree/SC3_1"
   },
   "keywords": [
     "Saucelabs"
   ],
   "authors": [
     "Parashuram <code@nparashuram.com>",
-    "Justin Reidy <jmreidy@rzrsharp.net>"
+    "Justin Reidy <jmreidy@rzrsharp.net>",
+    "Jonah Stiennon <jonahss@gmail.com>"
   ],
   "license": "MIT",
   "dependencies": {
